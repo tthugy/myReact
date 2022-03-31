@@ -7,17 +7,17 @@
 <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
-<!-- Your custom script here -->
+
 <script type="text/babel">
     const root = document.getElementById("root");
 
-    const title = (    
+    const Title = () => (    
         <h3 id="title" onMouseEnter={() => console.log('mouse enter')}>
         Hello I'm a span
         </h3>
     );
  
-    const button = (
+    const Button = () => (
         <button style={{
         backgroundColor: "tomato",
         }}
@@ -27,7 +27,14 @@
         </button>
     );
 
-    const container = React.createElement("div", null, [title, button]);
-    ReactDOM.render(container, root);
+    const Container = () => (
+        <div>
+            <h1>Hello I'm a title</h1>
+            <Title />
+            <Button />
+        </div>
+    )
+
+    ReactDOM.render(<Container />, root);
 </script>
 </html>
