@@ -13,27 +13,34 @@
 
     function App() {
         
-        const [minutes, setMinutes] = React.useState(0);
+        const [amount, setAmount] = React.useState(0);
+        const [inverted, setInverted] = React.useState(false);
 
-        const onChange = (evnet) => {
-            setMinutes(event.target.value);
+        const onChange = (event) => {
+            setAmount(event.target.value);
         }
 
-        const reset = () => setMinutes(0);
+        const reset = () => setAmount(0);
+
+        const invert = () => {
+            reset();
+            setInverted((current) => !current);
+        }
 
         return (
         <div>
             <h1 className="hi">Super Converter</h1>
             <div>
-                <lable htmlFor="minutes">Minutes</lable>
-                <input value={minutes} id="minutes" placeholder="Minutes" type="number" onChange={onChange} />
+                <lable htmlFor="amount">amount</lable>
+                <input value={inverted ? Math.round(amount * 60) : amount} id="minutes" placeholder="Minutes" type="number" onChange={onChange} disabled={inverted} />
             </div>
 
             <div>
                 <lable htmlFor="hours">Hours</lable>
-                <input value={Math.round(minutes / 60)} id="hours" placeholder="Hours" type="number" />    
+                <input value={inverted ? amount : Math.round(amount / 60)} id="hours" placeholder="Hours" type="number" onChange={onChange} disabled={!inverted}/>    
             </div>
             <button onClick={reset}>Reset</button>
+            <button onClick={invert}>{inverted ? "Turn back" : "Invert"}</button>
         </div>
         );
     }
