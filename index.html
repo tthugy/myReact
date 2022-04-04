@@ -11,6 +11,30 @@
 <script type="text/babel">
     const root = document.getElementById("root");
 
+    const padding = {
+        padding: "30px"
+    }
+
+    const mgRight = {
+        marginRight: "10px"
+    }
+
+    const smallmgRight = {
+        marginRight: "5px"
+    }
+
+    const backColor = {
+        background: "#b5d7ff",
+        display: "inline-block",
+        padding: "0 12px",
+        borderRadius: "6px",
+        fontSize: "24px"
+    }
+
+    const mgTop = {
+        marginTop: "14px"
+    }
+
     function MinutesToHours() {
         
         const [amount, setAmount] = React.useState(0);
@@ -30,22 +54,55 @@
         return (
         <div>
             <div>
-                <lable htmlFor="amount">Minutes</lable>
+                <lable style={mgRight} tmlFor="amount">Minutes</lable>
                 <input value={inverted ? Math.round(amount * 60) : amount} id="minutes" placeholder="Minutes" type="number" onChange={onChange} disabled={inverted} />
             </div>
 
             <div>
-                <lable htmlFor="hours">Hours</lable>
+                <lable style={mgRight} htmlFor="hours">Hours</lable>
                 <input value={inverted ? amount : Math.round(amount / 60)} id="hours" placeholder="Hours" type="number" onChange={onChange} disabled={!inverted}/>    
             </div>
-            <button onClick={reset}>Reset</button>
-            <button onClick={invert}>{inverted ? "Turn back" : "Invert"}</button>
+            <div style={mgTop}>
+                <button style={smallmgRight} onClick={reset}>Reset</button>
+                <button onClick={invert}>{inverted ? "Turn back" : "Invert"}</button>
+            </div>
         </div>
         );
     }
 
     function KmToMiles(){
-        return <h3>KM 2 M</h3>
+
+        const [amount, setAmount] = React.useState(0);
+        const [inverted, setInverted] = React.useState(false);
+
+        const onChange = (event) => {
+            setAmount(event.target.value);
+        }
+
+        const reset = () => setAmount(0);
+
+        const invert = () => {
+            reset();
+            setInverted((current) => !current);
+        }
+
+        return (
+        <div>
+            <div>
+                <lable style={mgRight} htmlFor="kilometer">Kilometer</lable>
+                <input value={inverted ? amount * 1.609344 : amount} id="kilometer" placeholder="Kilometer" type="number" onChange={onChange} disabled={inverted} />
+            </div>
+
+            <div>
+                <lable style={mgRight} htmlFor="miles">Miles</lable>
+                <input value={inverted ? amount : amount / 1.609344} id="miles" placeholder="Miles" type="number" onChange={onChange} disabled={!inverted}/>    
+            </div>
+            <div style={mgTop}>
+                <button style={smallmgRight} onClick={reset}>Reset</button>
+                <button onClick={invert}>{inverted ? "Turn back" : "Invert"}</button>
+            </div>
+        </div>
+        );
     }
     
     function App() {
@@ -56,8 +113,14 @@
         }
 
         return (
-        <div>
-            <h1 className="hi">Super Converter</h1>
+        <div style={padding}>
+            <h1 className="hi">
+                Super Converter! &nbsp;
+                <div style={backColor}>
+                    {index === "0" ? "Minutes ⇔ hours" : null}
+                    {index === "1" ? "Killometer ⇔ miles" : null}
+                </div>
+            </h1>
             <select value={index} onChange={onSelect}>
                 <option value="99">Select your units</option>
                 <option value="0">Minutes & Hours</option>    
