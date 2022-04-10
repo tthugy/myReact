@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 function App() {
 
   const [toDo, setToDo] = useState("");
+  const [toDos, setToDos] = useState([]);
   const onChange = (event) => setToDo(event.target.value);
   const onSubmit = (event) => {
     event.preventDefault();
@@ -10,6 +11,7 @@ function App() {
       return;
     }
     setToDo("");
+    setToDos(currentArray => [toDo, ...currentArray]);
   }
 
   return (
