@@ -15,3 +15,15 @@
     padding: 5px 0;
     font-size: 1.2rem;
 }
+
+.trackBox {
+    display: block;
+    height: 20px;
+    width: 300px;
+    border-radius: 6px;
+    background: #ca61e4;
+    color: #fff;
+    border: 0;
+    padding: 10px;
+    margin-bottom: 10px;
+}
