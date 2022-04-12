@@ -1,11 +1,19 @@
-import { useEffect, useState } from "react";
-import Movie from "./components/Movie.js";
-import PropTypes from "prop-types";
-import styles from "./App.module.css";
-import Home from "./routes/Home.js"
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./routes/Home.js";
+import Detail from "./routes/Detail.js";
 
 function App() {
-  return <Home />;
+  return <Router>
+    <Switch>
+      <Route path="/movie">
+        <Detail />
+      </Route>
+      <Route path="/">
+        <Home />
+      </Route>
+    </Switch>
+  </Router>;
 }
 
 export default App;
