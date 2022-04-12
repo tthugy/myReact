@@ -1,32 +1,28 @@
 import { useEffect, useState } from "react";
 import styles from "./App.module.css";
 
-function App() {
+function onChange(){
+  console.log('hi');
+};
 
+function App() {
+  
   const [loading, setLoading] = useState(true);
-  const [coins, setCoins] = useState([]);
+  const [movies, setMovies] = useState([]);
   useEffect(() => {
-    fetch("https://api.coinpaprika.com/v1/tickers").then(response => 
-    response.json()
-    ).then((json) => {
-      setCoins(json);
-      setLoading(false);
-    });
+    fetch(
+      `https://yts.mx/api/v2/list_movies.json?minimum_rating=8.8&sort_by=year`
+    )
+    .then((response) => response.json()
+    .then(json => setMovies(json.data.movies)));
   }, [])
+  console.log(movies);
 
   return (
     <div>
-      <h1>🔮 Coin Tracker {loading ? "" : `(${coins.length})`}</h1>
-      {loading ? <strong>Loading...</strong> :
+      {loading ? <h1>Loading...</h1> : 
       <div>
-        <input className={styles.trackBox}></input>
-        <select>
-          {coins.map((coin) => (
-            <option>
-              {coin.name} ({coin.symbol}): {coin.quotes.USD.price} USD
-            </option>
-          ))}
-        </select>
+        api
       </div>
       }
     </div>
