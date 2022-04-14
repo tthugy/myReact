@@ -1,0 +1,12 @@
+.totalBox {
+    display: flex;
+    background: rgb(19, 18, 18);
+    width: 5000px;
+    height: 100vh;
+    overflow-y: hidden
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}

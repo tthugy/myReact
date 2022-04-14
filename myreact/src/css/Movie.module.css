@@ -1,0 +1,13 @@
+.box {
+    background: #403f3f;
+    color: #fff;
+    padding: 20px;
+    margin: 20px;
+    width: calc(50% - 50px);
+    height: 100vh;
+}
+
+.title a {
+    color: #fff!important;
+    text-decoration: none;
+}
