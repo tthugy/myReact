@@ -4,7 +4,17 @@
     margin: 20px;
     width: 300px;
     height: 92vh;
-    border-radius: 16px;
+    border-radius: 6px;
+}
+
+.box:hover {
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.box:hover .mainImg {
+    transform: scale(1.05);
+    transition-duration: 1s
 }
 
 .title a {
@@ -12,13 +22,42 @@
     text-decoration: none;
 }
 
+.title {
+    padding: 10px;
+    margin-bottom: 0;
+    margin-top: 6px;
+    padding-bottom: 0;
+    min-height: 75px;
+}
+
 .contents {
     max-height: 300px;
     overflow: scroll;
     padding: 14px;
     background: #2f2f2f;
+    margin-top: 0;
 }
 
-.inner {
-    padding: 10px;
+.innerTxt {
+    margin: 0;
+    overflow: scroll;
+    max-height: 300px;
+    padding-right: 10px;
+}
+
+.mainImg {
+
+}
+
+.innerTxt::-webkit-scrollbar-thumb {
+    background-color: #414141;
+  }
+
+.innerTxt::-webkit-scrollbar-track {
+    background-color: rgb(192, 192, 192);
+}
+
+.genres {
+    list-style: none;
+    padding: 0 20px;
 }

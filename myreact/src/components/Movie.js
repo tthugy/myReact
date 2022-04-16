@@ -4,15 +4,19 @@ import styles from "../css/Movie.module.css";
 
 function Movie({id, coverImg, title, summary, genres}){
     return <div className={styles.box}>
-    <img src={coverImg} alt={title} />
+    <img className={styles.mainImg} src={coverImg} alt={title} />
     <div className={styles.inner}>
       <h2 className={styles.title}>
         <Link to={`/movie/${id}`}>🫧 &nbsp;{title}</Link>
       </h2>
-      <p className={styles.contents}>{summary}</p>
-      <ul>
+      <div className={styles.contents}>
+        <div className={styles.innerTxt}>
+        {summary}
+        </div>
+      </div>
+      <ul className={styles.genres}>
         {genres.map(g => 
-        <li key={g}>{g}</li>
+        <li key={g}>☁︎ &nbsp;{g}</li>
         )}
       </ul>
     </div>
