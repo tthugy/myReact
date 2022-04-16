@@ -1,13 +1,24 @@
 .box {
     background: #403f3f;
     color: #fff;
-    padding: 20px;
     margin: 20px;
-    width: calc(50% - 50px);
-    height: 100vh;
+    width: 300px;
+    height: 92vh;
+    border-radius: 16px;
 }
 
 .title a {
     color: #fff!important;
     text-decoration: none;
+}
+
+.contents {
+    max-height: 300px;
+    overflow: scroll;
+    padding: 14px;
+    background: #2f2f2f;
+}
+
+.inner {
+    padding: 10px;
 }

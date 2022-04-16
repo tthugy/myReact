@@ -5,11 +5,11 @@ import styles from "../css/Movie.module.css";
 function Movie({id, coverImg, title, summary, genres}){
     return <div className={styles.box}>
     <img src={coverImg} alt={title} />
-    <div>
+    <div className={styles.inner}>
       <h2 className={styles.title}>
         <Link to={`/movie/${id}`}>🫧 &nbsp;{title}</Link>
       </h2>
-      <p>{summary}</p>
+      <p className={styles.contents}>{summary}</p>
       <ul>
         {genres.map(g => 
         <li key={g}>{g}</li>
