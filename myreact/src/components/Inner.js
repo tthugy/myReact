@@ -3,14 +3,18 @@ import styles from "../css/Inner.module.css"
 
 function Inner(){
     return (
-      <div claaName={styles.innerBox}>
+      <div>
         <div className={styles.first}>
           <Link to ={`/`}>
            ← &nbsp; Go first
           </Link>
         </div>
         <div className={styles.detailBox}>
-          <p className={styles.title}>123123</p>
+          <div className={styles.dImgBox}>imgBox</div>
+          <div className={styles.contBox}>
+            <p className={styles.title}>movie title</p>
+            <p className={styles.summary}>movie summary</p>
+          </div>
         </div>
       </div>
     );

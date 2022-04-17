@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Inner from "../components/Inner.js";
+import PropTypes from "prop-types";
 import styles from "../css/Detail.module.css";
 
 function Detail(){
@@ -15,14 +16,17 @@ function Detail(){
     useEffect(() => {
         getMovie();
     }, []);
-    console.log(details);
+    // console.log(details);
     return (
         <div className={styles.dBox}>
-          {/* {details.map((detail) => (
-            <Inner
-            key={detail.id}/>
-          ))} */}
-          <Inner />
+            {/* {Object.keys(details).map((item) => {
+                // console.log(details[item]);
+                <Inner
+                key={item.id}
+                title={item.id}
+                />
+            })} */}
+            <Inner />
         </div>
     );
 }
