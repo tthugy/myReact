@@ -20,7 +20,9 @@ function Home(){
   
     return (
       <div>
-        {loading ? <h1>Loading...</h1> : 
+        {loading ? <div className={styles.loading}>
+          <div className={`${styles.loader} ${styles.loader5} ${styles.black}`}></div>
+        </div> : 
         <div className={styles.totalBox}>
           {movies.map((movie) => (
             <Movie

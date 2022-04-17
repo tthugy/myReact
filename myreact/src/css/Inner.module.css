@@ -1,0 +1,28 @@
+.innerBox {
+    width: 90%;
+    height: 90vh;
+    background: #403f3f;
+}
+
+.first {
+    color: #fff;
+}
+
+.first a {
+    text-decoration: none;
+    color: #fff;
+    margin: 20px;
+    display: block;
+    font-size: 1.2rem;
+}
+
+.title {
+    color: #fff;
+}
+
+.detailBox {
+    width: 90%;
+    margin: 0 auto;
+    height: 90vh;
+    background: #2f2f2f;
+}

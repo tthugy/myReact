@@ -4,7 +4,9 @@ import styles from "../css/Movie.module.css";
 
 function Movie({id, coverImg, title, summary, genres}){
     return <div className={styles.box}>
-    <img className={styles.mainImg} src={coverImg} alt={title} />
+    <Link to={`/movie/${id}`}>
+      <img className={styles.mainImg} src={coverImg} alt={title} />
+    </Link>
     <div className={styles.inner}>
       <h2 className={styles.title}>
         <Link to={`/movie/${id}`}>🫧 &nbsp;{title}</Link>

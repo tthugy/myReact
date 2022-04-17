@@ -1,0 +1,6 @@
+.dBox {
+    background: rgb(19, 18, 18);
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}

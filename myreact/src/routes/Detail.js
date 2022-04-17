@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Inner from "../components/Inner.js";
+import styles from "../css/Detail.module.css";
 
 function Detail(){
     const {id} = useParams();
@@ -16,11 +17,12 @@ function Detail(){
     }, []);
     console.log(details);
     return (
-        <div>
-          {details.map((detail) => (
+        <div className={styles.dBox}>
+          {/* {details.map((detail) => (
             <Inner
             key={detail.id}/>
-          ))}
+          ))} */}
+          <Inner />
         </div>
     );
 }
