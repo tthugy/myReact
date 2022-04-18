@@ -19,14 +19,14 @@ function Detail(){
     // console.log(details);
     return (
         <div className={styles.dBox}>
-            {/* {Object.keys(details).map((item) => {
-                // console.log(details[item]);
+            {Object.keys(details).map((item) => {
+                console.log(item);
                 <Inner
                 key={item.id}
                 title={item.id}
                 />
-            })} */}
-            <Inner />
+            })}
+            {/* <Inner /> */}
         </div>
     );
 }
