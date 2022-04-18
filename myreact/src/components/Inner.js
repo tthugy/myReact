@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "../css/Inner.module.css"
 
-function Inner({title}){
+function Inner({img, title, summary, genres, like, rating, runtime, url}){
     return (
       <div>
         <div className={styles.first}>
@@ -10,10 +10,12 @@ function Inner({title}){
           </Link>
         </div>
         <div className={styles.detailBox}>
-          <div className={styles.dImgBox}>imgBox</div>
+          <div className={styles.dImgBox}>{img}</div>
           <div className={styles.contBox}>
             <p className={styles.title}>{title}</p>
-            <p className={styles.summary}>movie summary</p>
+            <div>{genres}</div>
+            <span>Like {like} &nbsp; Rating {rating} &nbsp; runtime {runtime} &nbsp; url {url}</span>
+            <p className={styles.summary}>{summary}</p>
           </div>
         </div>
       </div>

@@ -16,17 +16,19 @@ function Detail(){
     useEffect(() => {
         getMovie();
     }, []);
-    // console.log(details);
+    console.log(details);
     return (
         <div className={styles.dBox}>
-            {Object.keys(details).map((item) => {
-                console.log(item);
-                <Inner
-                key={item.id}
-                title={item.id}
-                />
-            })}
-            {/* <Inner /> */}
+            <Inner
+            img={details.background_image}
+            title={details.title_long}
+            summary={details.description_intro}
+            genres={details.genres}
+            like={details.like_count}
+            rating={details.rating}
+            runtime={details.runtime}
+            url={details.url}
+            />
         </div>
     );
 }
