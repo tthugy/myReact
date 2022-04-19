@@ -10,7 +10,7 @@ function Inner({img, title, summary, genres, like, rating, runtime, url}){
           </Link>
         </div>
         <div className={styles.detailBox}>
-          <div className={styles.dImgBox}>{img}</div>
+          <div className={styles.dImgBox}><img src={img} /></div>
           <div className={styles.contBox}>
             <p className={styles.title}>{title}</p>
             <div>{genres}</div>

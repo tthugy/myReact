@@ -24,10 +24,16 @@
 
 .dImgBox {
     width: 100%;
-    height: 200px;
+    height: 320px;
+    padding: 30px;
+    box-sizing: border-box;
     line-height: 200px;
     color: #fff;
     text-align: center;
+}
+
+.dImgBox img {
+    height: 100%;
 }
 
 .contBox {
