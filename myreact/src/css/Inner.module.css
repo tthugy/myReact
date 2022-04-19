@@ -12,13 +12,14 @@
 
 .title {
     color: #fff;
+    font-size: 1.8rem;
 }
 
 .detailBox {
     width: 90%;
     margin: 0 auto;
     height: 90vh;
-    background: #2f2f2f;
+    background: #403f3f;
     border-radius: 6px;
 }
 
@@ -43,6 +44,8 @@
 }
 
 .summary {
-    height: 100px;
     margin: 50px 0;
+    background: #2f2f2f;
+    padding: 30px;
+    box-sizing: border-box;
 }
