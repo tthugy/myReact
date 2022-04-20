@@ -44,8 +44,15 @@
 }
 
 .summary {
-    margin: 50px 0;
+    margin: 10px 0;
     background: #2f2f2f;
     padding: 30px;
     box-sizing: border-box;
+}
+
+.summaryTitle {
+    margin-bottom: 0;
+    margin-top: 50px;
+    font-size: 1.6rem;
+    font-weight: bold;
 }

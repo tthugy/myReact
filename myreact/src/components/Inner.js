@@ -13,8 +13,9 @@ function Inner({img, title, summary, genres, like, rating, runtime, url}){
           <div className={styles.dImgBox}><img src={img} /></div>
           <div className={styles.contBox}>
             <p className={styles.title}>{title}</p>
-            <div>{genres}</div>
-            <span>Like {like} &nbsp; Rating {rating} &nbsp; runtime {runtime} &nbsp;</span>
+            <div>Genres {genres}</div>
+            <span>👍 {like} &nbsp; ⭐️ {rating} &nbsp; 🎬 {runtime} minutes &nbsp;</span>
+            <p className={styles.summaryTitle}>Storyline</p>
             <p className={styles.summary}>{summary}</p>
           </div>
         </div>
