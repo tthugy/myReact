@@ -14,7 +14,7 @@ function Inner({img, title, summary, genres, like, rating, runtime, url}){
           <div className={styles.contBox}>
             <p className={styles.title}>{title}</p>
             <div>{genres}</div>
-            <span>Like {like} &nbsp; Rating {rating} &nbsp; runtime {runtime} &nbsp; url {url}</span>
+            <span>Like {like} &nbsp; Rating {rating} &nbsp; runtime {runtime} &nbsp;</span>
             <p className={styles.summary}>{summary}</p>
           </div>
         </div>

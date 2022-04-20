@@ -13,7 +13,7 @@ function Movie({id, coverImg, title, summary, genres}){
       </h2>
       <div className={styles.contents}>
         <div className={styles.innerTxt}>
-        {summary}
+        {summary.length > 235 ? `${summary.slice(0, 235)}...` : summary}
         </div>
       </div>
       <ul className={styles.genres}>
